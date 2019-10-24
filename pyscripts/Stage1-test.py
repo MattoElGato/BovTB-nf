@@ -1,6 +1,7 @@
 
 import csv, pickle, operator, os, sys         
 import collections
+from functools import reduce
 
 #   parsing the arguments
 args=sys.argv
