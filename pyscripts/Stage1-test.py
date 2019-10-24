@@ -58,7 +58,9 @@ def writeCSV(fname,matrix):
 
 # transposes a python list 
 def listT(matrix):
-    return map(list, zip(*matrix))
+    zipped = zip(*matrix)
+    output = [list(item) for item in zipped]
+    return output
 
 # compares a strain gSS base calls (strpat) to the a genotype group pattern give by groPat
 # strPat is the reference patern.
