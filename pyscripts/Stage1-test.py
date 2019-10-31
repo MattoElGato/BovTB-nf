@@ -31,7 +31,7 @@ else:
     thqualnonsnp=int(sys.argv[9])
     strainVCF=sys.argv[10]
 
-patternsDetailsFile="CSSnewclusters_LT708304_040719.csv" #"CSSnewclusters_181115.csv" #"patterns20131220.csv"
+patternsDetailsFile="CSSnewclusters_LT708304_181217.csv"#"CSSnewclusters_"LT708304_040719.csv" #"CSSnewclusters_181115.csv" #"patterns20131220.csv"
 patternsBritishBTBFile="patternsBritishBTB_LT708304.csv"
 patternsPinnipediiFile="patternsPinnipedii_LT708304.csv"
 patternsMic_PinFile="patternsMic_Pin_LT708304.csv"
@@ -42,7 +42,7 @@ patternsBTBFile="patternsBTB_LT708304.csv"
 # reads a csv file
 # return a list where each element is a list containing the element of a row.
 def readTable(fname,ch):
-    infile=open(fname,"rb")
+    infile=open(fname,"r")
     data = csv.reader(infile, delimiter=ch)
     dataOut = [row for row in data]
     infile.close()
@@ -52,7 +52,7 @@ def readTable(fname,ch):
 # writes a list into a csv file
 # each element in the list is written as a row in the csv file
 def writeCSV(fname,matrix):
-    with open(fname, "wb") as fileOut:
+    with open(fname, "w") as fileOut:
         writer = csv.writer(fileOut)
         writer.writerows(matrix)
         print("file "+fname+" saved.")
