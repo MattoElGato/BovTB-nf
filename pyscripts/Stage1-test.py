@@ -195,7 +195,8 @@ def getSnpsStatsStrain(strainStatsFileName,listas,pathAux,thMinGoodCov,thCovProp
             out=out+[nu]
         listasOut=listasOut+[out]
     print("snps Extracted in lists of length:")
-    print(map(len,listasOut))
+    itemLen = [len(item) for item in listasOut]
+    print(itemLen)
     os.system("rm "+strainVCF)
     return listasOut
 
